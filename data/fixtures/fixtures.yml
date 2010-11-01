@@ -1,0 +1,57 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+# User:
+#   fabien:
+#     username: fabien
+#     password: changeme
+#     name:     Fabien Potencier
+#     email:    fabien.potencier@symfony-project.com
+#   kris:
+#     username: Kris.Wallsmith
+#     password: changeme
+#     name:     Kris Wallsmith
+#     email:    kris.wallsmith@symfony-project.com
+
+ServerGroup:
+        0:
+                name: Default
+                enabled: true
+
+        1:
+                name: Web Servers
+                enabled: true
+
+        2:
+                name: Database Servers
+                enabled: true
+
+        3:
+                name: Load Balancer Servers
+                enabled: true
+
+
+Server:
+        0:
+                name: Webserver 1
+                hostnamename: ws1
+                enabled: true
+                notes: One of the two webservers
+                servergroup: Web Servers
+
+        1:
+                name: Webserver 2
+                hostnamename: ws2
+                enabled: true
+                notes: One of the two webservers
+                servergroup: Web Servers
+
+        2:
+                name: Database Server 1
+                hostnamename: db1
+                enabled: true
+                notes: One of the five database servers
+                servergroup: Database Servers

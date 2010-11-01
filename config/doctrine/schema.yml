@@ -1,0 +1,19 @@
+Server:
+        actAs: { Timestampable: ~ }
+        columns:
+                name: { type: string(255), notnull: true }
+                hostname: { type: string(255), notnull: true }
+                group_id: { type: integer, notnull: true }
+                enabled: { type: boolean, notnull: true, default: true }
+                notes: { type: string, notnull: true }
+        relations:
+                ServerGroup: { onDelete: CASCADE, local: group_id, foreign: id, foreignAlias: Servers } 
+                
+
+ServerGroup:
+        actAs: { Timestampable: ~ }
+        columns:
+                name: { type: string(255), notnull: true }
+                enabled: { type: boolean, notnull: true, default: true }
+
+
